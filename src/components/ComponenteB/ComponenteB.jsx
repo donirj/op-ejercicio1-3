@@ -1,24 +1,22 @@
-import React, { Component } from 'react'
+
 import PropTypes from 'prop-types';
 
-class ComponenteB extends Component {
-    constructor(props) {
-        super(props)
+const ComponenteB = (props) => {
 
-    }
+    
 
-    render() {
-        return (
-            <div>
-                <p>Conectado: {this.props.conectado ? 'Contacto en línea' : 'Contacto No Disponible'}</p>
-            </div>
-        )
-    }
-}
+    return (
+        <div>
+            <h5>
+                Connectado: {props.connected ? 'CONNECTED' : 'DISCONNECTED'} 
+            </h5>
+        </div>
+    );
+};
 
 
 ComponenteB.propTypes = {
-    
+    connected: PropTypes.bool
 };
 
 

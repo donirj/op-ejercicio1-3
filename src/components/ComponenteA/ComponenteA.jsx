@@ -1,37 +1,32 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import ComponenteB from '../ComponenteB/ComponenteB'
 
-class ComponenteA extends Component {
-    constructor(props) {
-        super(props)
-        
-        // estado inicial del componente
-        this.state ={
-            nombre: 'doni',
-            apellido: 'jacks',
-            email: 'andoniresendiz@gmail.com',
-        }
-    }
+import PropTypes from 'prop-types';
+import ComponenteB from '../ComponenteB/ComponenteB';
+import { Data } from '../../models/data.class'
 
-    render() {
-        const { nombre, apellido, email } = this.state;
-        return (
-            <div>
-                <h2>Información del usuario</h2>
-                <p>Nombre: {nombre}</p>
-                <p>Apellido: {apellido}</p>
-                <p>Email: {email}</p>
-                <ComponenteB conectado={true}/>
-            </div>
-        )
-    }
+const ComponenteA = ({data}) => {
+
+
+    return (
+        <div>
+            <h1>ComponenteA</h1>
+            <h2>
+                Nombre: {data.name}
+            </h2>
+            <h3>
+                Apellido: {data.lastname}
+            </h3>
+            <h4>
+                email: {data.email}
+            </h4>
+            <ComponenteB connected={true}></ComponenteB>
+
+        </div>
+    );
 }
 
 ComponenteA.propTypes = {
-    nombre: PropTypes.string,
-    apellido: PropTypes.string,
-    email: PropTypes.string
-}
+    data: PropTypes.instanceOf(Data)
+};
 
-export default ComponenteA
+
+export default ComponenteA;
