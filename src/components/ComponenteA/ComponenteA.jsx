@@ -17,7 +17,7 @@ const ComponenteA = ({data}) => {
 
     return (
         <div>
-            <h1>ComponenteA</h1>
+            {/* <h1>ComponenteA</h1>
             <h2>
                 Nombre: {data.name}
             </h2>
@@ -27,7 +27,7 @@ const ComponenteA = ({data}) => {
             <h4>
                 email: {data.email}
             </h4>
-            <ComponenteB connected={true}></ComponenteB>
+            <ComponenteB connected={true}></ComponenteB> */}
 
             <button onClick={handleCorazonClick}>
                     <img src={corazon ? red : white} alt="Corazon" />
