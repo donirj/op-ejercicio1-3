@@ -1,10 +1,19 @@
-
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ComponenteB from '../ComponenteB/ComponenteB';
 import { Data } from '../../models/data.class'
+import white from '../../../assets/white.png'
+import red from '../../../assets/red.png'
+
 
 const ComponenteA = ({data}) => {
 
+    const [corazon, setCorazon] = useState(false);
+
+    const handleCorazonClick = () => {
+        console.log('click')
+      setCorazon(!corazon);
+    };
 
     return (
         <div>
@@ -19,6 +28,10 @@ const ComponenteA = ({data}) => {
                 email: {data.email}
             </h4>
             <ComponenteB connected={true}></ComponenteB>
+
+            <button onClick={handleCorazonClick}>
+                    <img src={corazon ? red : white} alt="Corazon" />
+            </button>
 
         </div>
     );
